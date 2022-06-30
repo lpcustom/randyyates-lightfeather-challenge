@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
   submit(): void {
     const phoneRegEx = /\D/ig;
     let phoneNumber = this.phoneNumber.replace(phoneRegEx, "");
-    console.log(phoneNumber);
+
     if (phoneNumber.length === 10) {
       phoneNumber = "+1" + this.phoneNumber.replace(phoneRegEx, '');
     } else if (this.phoneNumber.length > 0 && this.phoneNumber.length < 10) {
@@ -85,10 +85,16 @@ export class AppComponent implements OnInit {
   }
 
   handleAddSubmit(d: any): void {
-
+    this._snackbar.open('Successfully submitted the notification. Check your docker console!');
+    this.firstName = '';
+    this.lastName = '';
+    this.phoneNumber = '';
+    this.email = '';
+    this.supervisor = '';
   }
 
   handleAddSubmitError(e: any): void {
-
+    this._snackbar.open('An error occurred while submitting the notification. Check browser console for more information');
+    console.log(e);
   }
 }

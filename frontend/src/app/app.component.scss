@@ -1,15 +1,26 @@
 app-root {
+  width: 100%;
+  display: block;
   #notification-container {
-    margin-top: 40px;
-    mat-form-field {
-      width: 300px;
-      @media (max-width: 1053px) {
-        width: 100%;
+    #card-container {
+      width: 100%;
+    }
+    mat-card {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 900px;
+      margin-top: 40px;
+      mat-form-field {
+        width: 400px;
+        @media (max-width: 1390px) {
+          width: 100%;
+        }
       }
     }
   }
   #hire-me {
-    font-size: 8.5em;
-    margin-top: 40px;
+    font-size: 1.8em;
+    margin-left:10px;
+    margin-top: 10px;
   }
 }
