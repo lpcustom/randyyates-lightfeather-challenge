@@ -1,0 +1,25 @@
+version: "3.3"
+services:
+  backend:
+    build:
+      context: ./backend/
+    image: backend
+    container_name: backend
+    restart: always
+    ports:
+      - 5001:5001
+    expose:
+      - "5001"
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  frontend:
+    build:
+      context: ./frontend/
+    image: frontend
+    container_name: frontend
+    restart: always
+    ports:
+      - 8080:80
+    expose:
+      - "80"

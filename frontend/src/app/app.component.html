@@ -1,0 +1,44 @@
+<div id="notification-container">
+  <div fxLayout="row" class="margin-top-20">
+    <div fxFlex="20">&nbsp;</div>
+    <div fxFlex="60">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Notification Form</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div fxLayout="row wrap" fxLayoutAlign="space-between start">
+            <mat-form-field>
+              <mat-label>First Name</mat-label>
+              <input matInput [(ngModel)]="firstName">
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Last Name</mat-label>
+              <input matInput [(ngModel)]="lastName">
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input email matInput [(ngModel)]="email" [email]="validateEmail" #prmEmail="ngModel">
+              <mat-error *ngIf="prmEmail.errors">Invalid Email</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <span matPrefix>+1&nbsp;&nbsp;</span>
+              <mat-label>Phone</mat-label>
+              <input matInput [(ngModel)]="phoneNumber" (input)="formatPhone($event)">
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Supervisor</mat-label>
+              <mat-select [(ngModel)]="supervisor">
+                <mat-option *ngFor="let s of supervisors" value="{{s}}">{{s}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button class="mat-accent" mat-button (click)="submit()">Send Notification</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div fxFlex="20">&nbsp;</div>
+  </div>
+</div>
