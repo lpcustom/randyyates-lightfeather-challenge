@@ -37,9 +37,10 @@ export class AppComponent implements OnInit {
 
   submit(): void {
     const phoneRegEx = /\D/ig;
-    let phoneNumber = '';
-    if (this.phoneNumber.length === 10) {
-      phoneNumber = '"+1" + this.phoneNumber.replace(phoneRegEx, \'\')'
+    let phoneNumber = this.phoneNumber.replace(phoneRegEx, "");
+    console.log(phoneNumber);
+    if (phoneNumber.length === 10) {
+      phoneNumber = "+1" + this.phoneNumber.replace(phoneRegEx, '');
     } else if (this.phoneNumber.length > 0 && this.phoneNumber.length < 10) {
       this._snackbar.open('If including a phone number, it must be valid.');
     }
