@@ -9,11 +9,11 @@
           <div fxLayout="row wrap" fxLayoutAlign="space-between start">
             <mat-form-field>
               <mat-label>First Name</mat-label>
-              <input matInput [(ngModel)]="firstName">
+              <input matInput required [(ngModel)]="firstName">
             </mat-form-field>
             <mat-form-field>
               <mat-label>Last Name</mat-label>
-              <input matInput [(ngModel)]="lastName">
+              <input matInput required [(ngModel)]="lastName">
             </mat-form-field>
             <mat-form-field>
               <mat-label>Email</mat-label>
@@ -27,7 +27,7 @@
             </mat-form-field>
             <mat-form-field>
               <mat-label>Supervisor</mat-label>
-              <mat-select [(ngModel)]="supervisor">
+              <mat-select required [(ngModel)]="supervisor">
                 <mat-option *ngFor="let s of supervisors" value="{{s}}">{{s}}</mat-option>
               </mat-select>
             </mat-form-field>

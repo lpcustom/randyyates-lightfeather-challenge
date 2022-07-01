@@ -1,17 +1,26 @@
 version: "3.3"
 services:
-  backend:
+  # backend:
+  #   build:
+  #     context: ./backend/
+  #   image: backend
+  #   container_name: backend
+  #   restart: always
+  #   ports:
+  #     - 5001:5001
+  #   expose:
+  #     - "5001"
+  #   environment:
+  #     - PYTHONUNBUFFERED=1
+  node-backend:
     build:
-      context: ./backend/
-    image: backend
-    container_name: backend
-    restart: always
+      context: ./node-backend/
+    image: node-backend
+    container_name: node-backend
     ports:
-      - 5001:5001
+      5001:5001
     expose:
-      - "5001"
-    environment:
-      - PYTHONUNBUFFERED=1
+      - 5001
 
   frontend:
     build:

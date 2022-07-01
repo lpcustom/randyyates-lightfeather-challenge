@@ -81,7 +81,7 @@ export class AppComponent implements OnInit {
 
   handleGetSupervisorsError(e: any): void {
     this.supervisors = [];
-    this._snackbar.open('An error occurred while getting supervisors list.')
+    this._snackbar.open(e.error.message)
   }
 
   handleAddSubmit(d: any): void {
@@ -94,7 +94,7 @@ export class AppComponent implements OnInit {
   }
 
   handleAddSubmitError(e: any): void {
-    this._snackbar.open('An error occurred while submitting the notification. Check browser console for more information');
+    this._snackbar.open(e.error.message);
     console.log(e);
   }
 }
