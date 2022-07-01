@@ -18,7 +18,7 @@ services:
     image: node-backend
     container_name: node-backend
     ports:
-      5001:5001
+      - 5001:5001
     expose:
       - 5001
 
